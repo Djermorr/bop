@@ -1,0 +1,257 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a1a;
+  color: #f4f4f4;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #262626;
+  color: white;
+  padding: 1em 2em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #4da6ff;
+}
+
+.nav-download-button {
+  background-color: #4da6ff;
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-download-button:hover {
+  background-color: #1a8cff;
+}
+
+.hero {
+  background: url('public/background.png') no-repeat center center; /* Path to your hero image */
+  background-size: cover;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  z-index: 2;
+  text-align: center;
+}
+.features {
+  padding: 2em 0;
+  text-align: center;
+}
+
+.feature-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+  gap: 20px; /* Space between grid items */
+  column-gap: 50px;
+  justify-content: center; /* Center the entire grid */
+  max-width: 1200px; /* Maximum width of the grid */
+  margin: auto; /* Center the grid in the section */
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the start */
+  transition: transform 0.3s ease; 
+}
+
+.feature img {
+  max-width: 40%;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.feature-text {
+  max-width: 60%;
+  text-align: left;
+}
+
+.feature:hover {
+  transform: scale(1.1); /* Enlarge the feature on hover */
+  z-index: 10; /* Ensure the enlarged feature is above others */
+}
+
+/* Compatibility Section */
+.compatibility {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Adds space between image and text */
+}
+
+.compatibility img {
+  width: 50%; /* Adjusts image width */
+  max-width: 600px; /* Maximum size of the image */
+  height: auto;
+}
+
+.compatibility-text {
+  width: 50%;
+  padding: 1em;
+}
+
+/* Testimonials Section */
+.testimonials {
+  text-align: center;
+  padding: 2em 0;
+  max-width: 50em; /* Set a maximum width instead of a fixed width */
+  margin: auto; /* Center the section */
+}
+
+.testimonial {
+  display: none; /* Initially hide all testimonials */
+}
+
+#testimonial1 {
+  display: inline-flex; /* Show the first testimonial */
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  margin-bottom: 20px; /* Spacing between testimonials */
+}
+
+.testimonial-img {
+  width: 80px; /* Set the width */
+  height: 80px; /* Height adjusts automatically */
+  border-radius: 50%; /* Circular image */
+  margin-left: 15px;
+  object-fit: cover; /* Ensures the image covers the area without being stretched */
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+/* Download Section */
+.download {
+  background-color: #4da6ff; /* Adjust the color as necessary */
+  padding: 2em 1em;
+  text-align: center;
+  color: white;
+}
+
+.download h2 {
+  margin-bottom: 1em;
+}
+
+footer {
+  background-color: #262626;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: #4da6ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.download p{
+  padding-bottom: 2em;
+}
+
+.download-button {
+  background-color: #193450;
+  color: white;
+  padding: 1em 2em;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.download-button:hover {
+  background-color: #052749;
+  transform: scale(1.05);
+}
+section{
+  margin-bottom: 12em;
+}
+.download {
+  margin-bottom: 0;
+}
+.testimonials{
+  margin-bottom: 12em;
+}
+
+@media (max-width: 768px) {
+  .hero-content, .feature-text {
+      text-align: center;
+  }
+  nav a {
+      display: block;
+      margin: 10px 0;
+  }
+  .feature-container {
+    grid-template-columns: 1fr; /* One column on smaller screens */
+}
+
+.feature img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.feature-text {
+    max-width: 100%;
+    text-align: center;
+}
+}
